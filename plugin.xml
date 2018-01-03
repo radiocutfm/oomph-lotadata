@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.lotadata.moments"
+        version="0.7.0">
+
+  <name>Lodata Moments</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.0.0"/>
+    <engine name="cordova-android" version=">=5.0.0"/>
+  </engines>
+
+  <asset src="www/moments.js" target="js/moments.js"/>
+
+  <js-module src="www/moments.js" name="moments">
+    <clobbers target="moments" />
+  </js-module>
+
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="Moments">
+        <param name="android-package" value="com.lotadata.moments.Moments"/>
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/com/lotadata/moments/Moments.java" target-dir="src/com/lotadata/moments/" />
+  </platform>
+
+
+</plugin>
