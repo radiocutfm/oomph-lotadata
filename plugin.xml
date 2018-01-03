@@ -24,7 +24,7 @@
       </feature>
     </config-file>
 
-    <source-file src="src/android/com/lotadata/moments/Moments.java" target-dir="src/com/lotadata/moments/" />
+    <source-file src="src/android/Moments.java" target-dir="src/com/lotadata/moments/" />
   </platform>
 
 
