@@ -17,8 +17,6 @@ public class MomentsPlugin extends CordovaPlugin {
     @Override
     public void onNewIntent(Intent intent) {
         cordova.getActivity().setIntent(intent);
-//        AppsFlyerLib.getInstance().sendDeepLinkData(cordova.getActivity());
-
         momentsClient = MomentsClient.getInstance(cordova.getActivity());
     }
 
@@ -27,6 +25,7 @@ public class MomentsPlugin extends CordovaPlugin {
 
         if (RECORD_EVENT.equals(action)) {
             String name = data.getString(0);
+            momentsClient.recordEvent(name);
             callbackContext.success(name);
             return true;
         } else {
