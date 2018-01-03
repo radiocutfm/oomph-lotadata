@@ -1,4 +1,4 @@
-package com.lotadata.moments;
+package com.oomph.lotadata;
 
 import org.apache.cordova.*;
 import org.json.JSONArray;
