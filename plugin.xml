@@ -13,18 +13,18 @@
   <asset src="www/moments.js" target="js/moments.js"/>
 
   <js-module src="www/moments.js" name="moments">
-    <clobbers target="moments" />
+    <clobbers target="lotadata" />
   </js-module>
 
   <platform name="android">
 
     <config-file target="res/xml/config.xml" parent="/*">
-      <feature name="Moments">
-        <param name="android-package" value="com.oomph.lotadata.Moments"/>
+      <feature name="MomentsPlugin">
+        <param name="android-package" value="com.oomph.lotadata.MomentsPlugin"/>
       </feature>
     </config-file>
 
-    <source-file src="src/android/Moments.java" target-dir="src/com/oomph/lotadata/" />
+    <source-file src="src/android/MomentsPlugin.java" target-dir="src/com/oomph/lotadata/" />
   </platform>
 
 
