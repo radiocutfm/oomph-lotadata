@@ -23,6 +23,14 @@
         <param name="android-package" value="com.oomph.lotadata.MomentsPlugin"/>
       </feature>
     </config-file>
+    <edit-config file="AndroidManifest.xml" target="/manifest/application/activity[@android:name='MainActivity']" mode="overwrite">
+      <activity android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale" android:label="@string/activity_name" android:launchMode="singleTop" android:name="MainActivity" android:screenOrientation="portrait" android:theme="@style/Custom" android:windowSoftInputMode="adjustResize">
+        <intent-filter>
+          <action android:name="android.intent.action.MAIN"/>
+          <category android:name="android.intent.category.LAUNCHER"/>
+        </intent-filter>
+      </activity>
+    </edit-config>
 
     <source-file src="src/android/MomentsPlugin.java" target-dir="src/com/oomph/lotadata/" />
   </platform>

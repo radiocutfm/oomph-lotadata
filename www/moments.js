@@ -1,3 +1,4 @@
+cordova.define("oomph-lotadata-plugin.moments", function(require, exports, module) {
 /*global cordova, module*/
 
 module.exports = {
@@ -5,3 +6,5 @@ module.exports = {
         cordova.exec(successCallback, errorCallback, "MomentsPlugin", "recordEvent", [name]);
     }
 };
+
+});
