@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
         id="oomph-lotadata-plugin"
-        version="0.7.0">
+        version="1.0.0">
 
   <name>Lodata Moments</name>
 
@@ -17,6 +17,16 @@
   </js-module>
 
   <platform name="android">
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+        <service android:exported="false" android:name="com.lotadata.moments.MomentsService" />
+        <meta-data android:name="com.lotadata.moments.API_KEY" android:value="a5af029973985d027efe067f43c28851" />
+        <activity android:label="@string/activity_name" android:name="com.oomph.lotadata.MomentsActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </config-file>    
 
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="MomentsPlugin">
@@ -25,6 +35,8 @@
     </config-file>
 
     <source-file src="src/android/MomentsPlugin.java" target-dir="src/com/oomph/lotadata/" />
+    <source-file src="src/android/MomentsActivity.java" target-dir="src/com/oomph/lotadata/" />
+      
   </platform>
 
 

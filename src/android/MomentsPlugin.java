@@ -23,38 +23,19 @@ public class MomentsPlugin extends CordovaPlugin {
     private static final String RECORD_EVENT = "recordEvent";
     private Moments momentsClient;
 
-//    @Override
-//    public void initialize(CordovaInterface cordova, CordovaWebView webView) {
-//        super.initialize(cordova, webView);
-//    }
-//
-//    @Override
-//    public void onNewIntent(Intent intent) {
-//        cordova.getActivity().setIntent(intent);
-//        Context context = cordova.getActivity().getApplicationContext();
-//        Intent intent = new Intent(context, com.moxoomphindonesia.gmobi.MainActivity.class);
-//
-//        cordova.getActivity().startActivity(intent);
-//        momentsClient = MomentsClient.getInstance(cordova.getActivity());
-//    }
-
     @Override
     public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
         Log.d(TAG, "Executing...");
 
-//        if("recordEvent".equals(action))
-//        {
-//            return trackEvent(data, callbackContext);
-//        }
-//        return false;
-
         if (RECORD_EVENT.equals(action)) {
             String name = data.getString(0);
+
+            // Sent intent to MomentsActivity
             Context context = cordova.getActivity().getApplicationContext();
-            Intent intent = new Intent(context, com.moxoomphindonesia.gmobi.MainActivity.class);
+            Intent intent = new Intent(context, MomentsActivity.class);
             intent.putExtra("name",name);
             context.startActivity(intent);
-//            momentsClient.recordEvent(name);
+
             callbackContext.success(name);
             return true;
         } else {
@@ -83,9 +64,4 @@ public class MomentsPlugin extends CordovaPlugin {
         return true;
     }
 
-    @Override
-    public void onDestroy() {
-        momentsClient.disconnect();
-        super.onDestroy();
-    }
 }
