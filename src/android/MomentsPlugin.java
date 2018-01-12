@@ -33,6 +33,7 @@ public class MomentsPlugin extends CordovaPlugin {
             // Sent intent to MomentsActivity
             Context context = cordova.getActivity().getApplicationContext();
             Intent intent = new Intent(context, MomentsActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.putExtra("name",name);
             context.startActivity(intent);
 
