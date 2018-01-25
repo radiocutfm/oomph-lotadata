@@ -19,7 +19,7 @@
   <platform name="android">
     <config-file target="AndroidManifest.xml" parent="/manifest/application">
         <service android:exported="false" android:name="com.lotadata.moments.MomentsService" />
-        <meta-data android:name="com.lotadata.moments.API_KEY" android:value="a5af029973985d027efe067f43c28851" />
+        <meta-data android:name="com.lotadata.moments.API_KEY" android:value="$API_KEY" />
         <activity android:label="@string/activity_name" android:name="com.oomph.lotadata.MomentsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
