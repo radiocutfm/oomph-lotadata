@@ -27,6 +27,10 @@
             </intent-filter>
         </activity>
     </config-file>    
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+      <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    </config-file>
 
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="MomentsPlugin">
@@ -36,6 +40,7 @@
 
     <source-file src="src/android/MomentsPlugin.java" target-dir="src/com/oomph/lotadata/" />
     <source-file src="src/android/MomentsActivity.java" target-dir="src/com/oomph/lotadata/" />
+    <source-file src="moments-sdk-latest.jar" target-dir="libs"/>
       
   </platform>
 
